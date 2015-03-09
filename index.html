@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planner</title>
+
+  
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+
+  </head>
+  <body background = "images/background.jpg">
+	<header>
+		<span id="header-text">Planner</span>
+		
+	</header>
+	
+		<div id ="startView">
+		<button id = "start-button" class = "button left">Start Planning Your Agenda</button>
+		
+		</div>
+	
+	
+	
+		<div id = "selectDishView">
+			
+			
+			<div id="side-bar">
+			<div class="padding">
+						<h1>My Dinner</h1>
+						<span>Number of guests:</span><span id="numberOfGuests"></span> 
+						<button id="plusGuest" class="button">+</button>
+						<button id="minusGuest" class="button">-</button>
+			</div>
+			<div id="table-head">
+						<span>Dish Name<span>
+						<span class="right">Cost</span>
+			</div>
+			<div class="padding">
+					<table class="side-bar-table" id="dish-table"></table>
+							
+							<hr>
+							<span id="total" class="right"></span>
+
+			</div>
+				<div class="padding">
+							<button class="button left" id="confirm-dinner">Confirm Dinner</a>
+				</div>
+		</div>			
+						
+						
+						
+						
+
+						<div id="right-content">
+							<div id="top-bar">
+								<h1>Select dish</h1>
+
+								<input id="search-input" class="text-input left"placeholder="Enter key words">
+								<button id="search-button" class="button left">Search</button>
+
+								<select id="selector">
+									<option value="main dish" selected="selected">Main</option>
+									<option value="starter">Starter</option>
+									<option value="dessert">Desert</option>
+								</select>
+							
+							</div>
+							<div id="display">
+								<div id="thumbs"></div>	
+							</div>
+						
+						
+						
+						
+						<!--Dish information view -->
+					<div id="display2">
+						<div id="dish-info">
+							<h1 id="dish-name"></h1>
+							<div class="dish-img"></div>
+							<p id="dish-description"></p>
+							<button id="back-button" class="button left">Go back</button>
+						</div>
+						
+						<div id="ingredients">
+							<h1 id="ingredients-headline"></h1>
+							<table id="ingredients-table"></table>
+							<hr>
+							<button id="confirm-dish" class="button left">Confirm Dish</button>
+							<span id="total-price" class="right"> </span>
+						</div>
+					</div>
+				</div>
+					
+						<div id="confirm-menu-view">
+							<div id="status-bar">
+								<h2 id="number-of-guests"></h2>
+								<button id="go-back" class="button right">Go back and edit dinner</button>
+							</div>
+							<div id="result"></div>
+							<div id="spec">
+								<h1>Total price: <span id="total-menu-price"></span></h1>
+								<button id="print-full-recipe" class="button">Print full recipe</button>
+							</div>
+						</div>
+					
+			</div>	
+					</div>
+									
+									
+
+							
+
+					
+						
+	
+		
+
+
+
+		
+
+
+
+
+
+
+
+  <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+	<!-- The application JavaScript code -->
+	<!--<script src="js/app.js"></script>-->
+	<script src="js/model/model.js"></script>
+
+
+</body>
+
+</html>

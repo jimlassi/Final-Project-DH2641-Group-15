@@ -1,0 +1,609 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela); 
+
+body, * {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-repeat: no-repeat;
+	font-family: 'Camria', serif;
+	/*background: url("../images/start_image.jpg"); */
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+h1 {
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+p {
+	margin: 20px 0;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	background: black;
+	margin: 20px 0;
+	display: block;
+}
+
+table {
+	width: 100%;
+}
+
+.side-bar-table td:nth-child(2n + 2) {
+	float: right;
+}
+
+#ingredients-table td:nth-child(3n + 2) {
+	text-align: center;
+}
+
+#ingredients-table td:nth-child(3n + 3) {
+	float: right;
+}
+
+#ingredients-table tr:nth-child(2n + 1) {
+	background: #eacc83;
+}
+
+.text-input {
+	border: solid 1px #8b8b8b;
+	padding: 10px;
+	width: 200px;
+}
+
+select {
+	padding: 10px;
+	width: 300px;
+	margin-left: 5%;
+	border: solid 1px #8b8b8b;
+
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.padding {
+	padding: 20px;
+}
+
+/* === Button === */
+
+.button {
+	background: white;
+	border: solid 1px #b39141;
+	padding: 5px 5px;
+	margin: 10px 0;
+	display: inline-block;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 15px;
+}
+
+.button:hover {
+	background: #dbb761;
+}
+
+.button:active {
+	color: white;
+	background: rgb(255, 211, 105);
+}
+
+#plus-number-of-people {
+	background: #c4c4c4;
+	border: solid 1px #626262;
+	display: inline;
+	width: 20px;
+	text-align: center;
+	padding: 0;
+}
+
+#minus-number-of-people {
+	background: #c4c4c4;
+	border: solid 1px #626262;
+	display: inline;
+	width: 20px;
+	text-align: center;
+	padding: 0;
+}
+
+#search-button {
+	margin-top: 0;
+	margin-left: -2px;
+}
+
+
+
+/* === Header === */
+
+header {
+	width: 100%;
+	background: rgba(0,0,0);
+	position: absolute;
+	top: 0;
+	padding: 20px;
+	border-bottom: 2px solid black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#header-logo {
+	font-size: 4em;
+	margin-top: 15px;
+	text-transform: uppercase;
+}
+
+#header-text {
+	margin-left: 3%;
+	font-size: 1.5em;
+}
+#header-view {
+	background: white;
+	
+	
+}
+
+.starter-trash {
+	height: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.main-trash {
+	height: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.desert-trash {
+	height: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+/* === Content === */
+
+#confirm-menu-view {
+	display: none;
+}
+
+#selectDishView {
+	display: none;
+}
+
+#start {
+	width: 30%;
+	min-height: 250px;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 20px;
+	margin-top: 30%;
+	margin-bottom: 3%;
+	margin-left: 3%;
+	overflow: hidden;
+}
+
+#print-view {
+	display: none;
+}
+
+#side-bar {
+	width: 20%;
+	height: 900px;
+	float: left;
+	margin-top: 122px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#picture-bar {
+	width: 20%;
+	height: 200px;
+	margin-bottom: 
+
+}
+#picture-bar.pos_top {
+    position: relative;
+    top: -50px;
+}
+
+#right-content {
+	float: left;
+	min-height: 900px;
+	width: 80%;
+	margin-top: 124px;
+	border-left: solid 2px black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+#right-content-right {
+	position: absolute;
+	left: 1000px;
+    	top: 10px;
+	min-height: 900px;
+	background: rgba(255, 211, 105, 0.7);
+	width: 80%;
+	margin-top: 124px;
+	border-left: solid 2px black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+#top-bar {
+	width: 100%;
+	position: relative;
+	background: #c4c4c4;
+	height: 150px;
+	padding: 20px;
+	border-bottom: 2px solid black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#display {
+	width: 100%;
+	position: relative;
+	height: 750px;
+	padding: 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#display2 {
+	display: none;
+	width: 100%;
+	position: relative;
+	height: 750px;
+	padding: 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#table-head {
+	background: #c4c4c4;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 40px;
+	padding: 10px 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.dish-thumb {
+	border: 2px solid black;
+	width: 20%;
+	min-height: 350px;
+	overflow: auto;
+	float: left;
+	margin: 20px;
+	cursor: pointer;
+}
+
+.dish-thumb:hover {
+	border: solid 2px rgb(255, 211, 105);
+}
+
+.dish-thumb p {
+	padding: 20px;
+	margin-top: 0;
+}
+
+.dish-thumb h2 {
+	text-align: center;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	background: #c4c4c4;
+	padding: 5px;
+	width: 100%;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.dish-thumb-img {
+	width: 100%;
+	height: 150px;
+}
+
+.short {
+	min-height: 220px;
+	cursor: auto;
+	margin-left: 9%;
+	display: inline;
+}
+
+.short:hover {
+	border: solid 2px black;
+}
+
+#dish-info {
+	position: relative;
+	width: 50%;
+	min-height: 900px;
+	display: inline;
+	float: left;
+	padding: 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#dish-info p {
+	margin-bottom: 20px;
+}
+
+#ingredients {
+	position: relative;
+	width: 50%;
+	display: inline;
+	background: green;
+	padding: 20px;
+	float: left;
+	border: 2px solid black;
+	background: rgba(255, 211, 105, 0.7);
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.dish-img {
+	width: 100%;
+	position: relative;
+	height: 300px;
+}
+
+#back-to-select-dish {
+	margin: 30px 0;
+}
+
+#status-bar {
+	border-bottom: 2px solid black;
+	background: #c4c4c4;
+	margin-top: 122px;
+	width: 100%; 
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	padding: 20px;
+}
+
+#go-back {
+	margin-top: -32px;
+}
+
+#dishes {
+	margin: auto;
+	height: 500px;
+	background: green;
+}
+
+#result {
+	width: 100%;
+	display: block;
+}
+
+#print-full-recipe {
+	margin: auto;
+}
+
+#result {
+	width: 70%;
+	display: inline;
+}
+
+#spec {
+	margin-left: 9%;
+	margin-right: 9%;
+	height: auto;
+	margin-top: 300px;
+	text-align: center;
+}
+
+#spec h1{
+	margin-left: 9%;
+	margin-right: 9%;
+}
+
+.print {
+	width: 96%;
+	margin: 40px 2% 20px 2%;
+	border-bottom: 1px solid black;
+	overflow: auto;
+	padding-bottom: 40px;
+}
+
+.print img {
+	margin-right: 20px;
+	width: 50%;
+}
+
+.left-print {
+	width: 46%;
+	margin-right: 4%;
+	position: relative;
+}
+
+.right-print {
+	width: 46%;
+	margin-right: 4%;
+	position: relative;
+}
+
+
+/* === MEDIA === */
+
+@media only screen and (max-width: 1281px) {
+
+	.dish-thumb {
+		width: 40%;
+	}
+
+	#side-bar {
+		width: 30%;
+	}
+
+	#right-content {
+		width: 70%;
+	}
+
+	.dish-img {
+		height: 200px;
+	}
+
+	.short {
+		margin-left: 4%;
+		width: 27%;
+	}
+
+
+}
+
+@media only screen and (max-width: 1150px) {
+
+	#header-logo {
+		font-size: 2em;
+	}
+
+	#header-text {
+		font-size: 1em;
+	}
+
+	#startView {
+		width: 50%;
+		margin-top: 20%;
+	}
+
+	#right-content{
+		margin-top: 83px;
+	}
+
+	#side-bar {
+		margin-top: 83px;
+	}
+
+	select {
+		width: 100px;
+	}
+
+	#status-bar {
+		margin-top: 83px;
+	}
+
+	.short {
+		margin-left: 3%;
+		width: 27%;
+	}
+}
+
+@media only screen and (max-width: 810px) {
+
+	#header-text {
+		font-size: 0.7em;
+	}
+
+	#startView {
+		width: 80%;
+	}
+
+	.dish-thumb {
+		width: 80%;
+	}
+
+	#side-bar {
+		width: 40%;
+	}
+
+	#right-content {
+		width: 60%;
+	}
+
+	.text-input {
+		width: 100px;
+	}
+
+	#dish-info {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	#ingredients {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+		margin-bottom: 20px;
+	}
+
+	.short {
+		margin-left: 2%;
+		width: 27%;
+	}
+
+}
+
+@media only screen and (max-width: 626px) {
+	
+	#header-text {
+		display: none;
+	}
+
+	#side-bar {
+		width: 100%;
+		height: 500px;
+	}
+
+	#right-content {
+		width: 100%;
+		margin: 0;
+		border: none;
+		border-top: 2px solid black;
+	}
+
+	.dish-thumb {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	#dish-info {
+		width: 100%;
+		margin: 0;
+	}
+
+	#ingredients {
+		width: 100%;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	.short {
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+
+	#print-full-recipe {
+		margin-bottom: 20px;
+	}
+}
+
+@media only screen and (max-width: 500px) { 
+	#go-back {
+		float: none;
+		margin-top: 10px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+
+	#startView {
+		margin-top: 100px;
+	}
+
+	select {
+		margin: 0;
+		width: 80%;
+	}
+
+	#top-bar {
+		height: 200px;
+	}
+
+}
