@@ -1,19 +1,13 @@
 //DinnerModel Object constructor
 var DinnerModel = function() {
  
-	var type = "main dish";
-	var guests = 4;
-	//var menu={"starter":1, "main dish":100, "dessert":201};
-	var menu = [];
-	var tempId = 1;
-	var filter = "";
-	var observers = [];
+	
 	
 	
 	this.setAgendaItem = function(string){
 
 
-		
+
 
 	}
 
