@@ -104,13 +104,13 @@ select {
 
 .add-activity-button{
 
-	border: solid 1px #b39141;
+	border: solid/* 1px #b39141*/;
 	padding: 10px 20px;
-	margin: 90px 20px;
-	background: grey;
+	background: green;
 	position: block;
 	font-weight: bold;
 	cursor: pointer;
+    width: 100%;
 	font-family: arial;
 	font-size: 13px;
 }
@@ -378,7 +378,7 @@ header {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-
+/* ==== ACTIVITY STIFF ==== */
 
 #activity-rect {
 	position: relative;
@@ -395,6 +395,22 @@ header {
 
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
+
+#activity-table-head {
+	background: #c4c4c4;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 40px;
+	padding: 10px 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+.side-bar-table td:nth-child(2n + 2) {
+	float: right;
+}
+
+
+
 .dish-img {
 	width: 100%;
 	position: relative;
