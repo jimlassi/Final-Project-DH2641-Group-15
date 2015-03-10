@@ -51,12 +51,12 @@ table {
 /* === BUTTONS (WIP) === */
 .add-activity-button {
     border: solid;
-    padding: 10px 20xp;
-    background: green;
+    padding: 10px 20px;
+    background: rgba(0,255,0,0.4);
     position: block;
     font-weight: bold;
     cursor: pointer;
-    width: 100%
+    width: 100%;
     font-size: 13px;
 }
 .add-activity-button:hover {
@@ -161,11 +161,19 @@ header {
 
 #activity-table-head {
 	background: #c4c4c4;
-	border-top: 2px solid black;
+	border-top: 2px;
 	border-bottom: 2px solid black;
 	height: 40px;
 	padding: 10px 20px;
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.activity-table-head-left {
+    width: 49%;
+    margin-left: 2px;
+    float: left;
+}
+.activity-table-head-right {
+    float: left;
 }
 
 /* === DAY STUFF === */
