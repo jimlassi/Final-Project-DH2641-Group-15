@@ -178,6 +178,18 @@ header {
     float: left;
 }
 
+.row {
+
+
+	background:white;
+	position:relative;
+	border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+
+
 /* === DAY STUFF === */
 #day-rect {
 	position: relative;
@@ -191,8 +203,10 @@ header {
 	margin-left: 20px;
 	float: left;
 	border: 2px solid black;
+	z-index:-999;
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
+
 
 /* === POPUP === */
 div#popupAddActivity {

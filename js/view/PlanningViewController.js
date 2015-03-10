@@ -40,7 +40,25 @@ var PlanningViewController = function(view, model ) {
 				$("#popupAddActivity").hide();
 	
 	});
-		
+	
+	
+	
+	
+	$(function() {
+    $( ".row" ).draggable();
+    $( "#day-rect" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "div" )
+            .html( "Dropped!" );
+      }
+    });
+  });
+	
+	
+	
+	
 	}
 
 
