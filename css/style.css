@@ -102,6 +102,19 @@ select {
 	font-size: 13px;
 }
 
+.add-activity-button{
+
+	border: solid 1px #b39141;
+	padding: 10px 20px;
+	margin: 90px 20px;
+	background: grey;
+	position: block;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 13px;
+}
+
 
 
 
