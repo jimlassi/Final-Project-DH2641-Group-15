@@ -11,11 +11,11 @@ var PlanningView = function (container, model) {
 	var description; 
 	var type;
 
-
+	
 	function getTable(){
 
-
 		this.table = container.find("#activity-table-content");
+		this.table.html("");
 
 		for(i= 0; i< model.parkedActivities.length; i++){
 
@@ -23,14 +23,20 @@ var PlanningView = function (container, model) {
 		 name = model.parkedActivities[i].getName();
 		 time = model.parkedActivities[i].getLength();
 		 description = model.parkedActivities[i].getDescription();
+		 
 
+		 this.table.append("<tr><i>");
 
-
-		 this.table.html(name);
+		
+		 this.table.append("<td>"+ time+"min         </td>");
+	  	this.table.append("<td>"+name+"</td>");
+	
+		this.table.append("</i></tr>");
+		 
 
 
 }
-
+		this.table.append("</table>")
 }
 
 

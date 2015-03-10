@@ -47,7 +47,9 @@ table {
 .right {
     float: right;
 }
-
+th,td {
+    padding: 5px 15px;
+}
 /* === BUTTONS (WIP) === */
 .add-activity-button {
     border: solid;
@@ -241,3 +243,4 @@ select {
 	background-repeat:no-repeat;
 	background-position:5px 7px
 }
+
