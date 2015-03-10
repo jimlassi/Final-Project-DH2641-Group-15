@@ -228,7 +228,8 @@ header {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-#display {
+#planning-view {
+	display: none;
 	width: 100%;
 	position: relative;
 	height: 750px;
