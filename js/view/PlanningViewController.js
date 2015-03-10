@@ -3,7 +3,9 @@ var PlanningViewController = function(view, model ) {
 			
 	$("#add-activity").click(function(){
 		
-		alert("activity box");
+		var activityName = prompt("activity name");
+		var description = prompt("description");
+		
 	});
 
 
