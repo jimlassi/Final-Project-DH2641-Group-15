@@ -29,12 +29,17 @@ var PlanningViewController = function(view, model ) {
 					$("#popupAddActivity").hide();
 					document.getElementById('name').value ="";
 					document.getElementById('length').value="";
-					document.getElementById('type').value=""; 
+					document.getElementById('type').value="0"; 
 					document.getElementById('description').value="";
 			}
 					
 			
 		});
+	//Exit add activity to hide popup
+	$("#exit-activity").click(function(){
+				$("#popupAddActivity").hide();
+	
+	});
 		
 	}
 

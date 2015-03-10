@@ -6,15 +6,38 @@ var PlanningView = function (container, model) {
 
 	
 
+	var name = "";
+	var time; 
+	var description; 
+	var type;
+
+
+	function getTable(){
+
+
+		this.table = container.find("#activity-table-content");
+
+		for(i= 0; i< model.parkedActivities.length; i++){
+
+
+		 name = model.parkedActivities[i].getName();
+		 time = model.parkedActivities[i].getLength();
+		 description = model.parkedActivities[i].getDescription();
 
 
 
+		 this.table.html(name);
+
+
+}
+
+}
 
 
 	this.update = function(arg){
 		
-		
 
+		getTable();
 		//dosomething();
 
 
