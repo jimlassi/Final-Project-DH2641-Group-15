@@ -271,7 +271,43 @@ header {
 	padding: 20px;
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
-
+div#popupAddActivity {
+	display: none;
+	z-index: 999;
+	position:absolute;
+	left:50%;
+	top:17%;
+	margin-left:-202px;
+	font-family:'Raleway',sans-serif
+}
+form {
+	max-width:300px;
+	min-width:250px;
+	padding:10px 50px;
+	border:2px solid gray;
+	border-radius:10px;
+	font-family:raleway;
+	background-color:#fff
+}
+input[type=text] {
+	width:82%;
+	padding:10px;
+	margin-top:30px;
+	border:1px solid #ccc;
+	padding-left:40px;
+	font-size:16px;
+	font-family:raleway
+}
+#name {
+	background-image:url(../images/name.jpg);
+	background-repeat:no-repeat;
+	background-position:5px 7px
+}
+#description {
+	background-image:url(../images/email.png);
+	background-repeat:no-repeat;
+	background-position:5px 7px
+}
 #display2 {
 	display: none;
 	width: 100%;

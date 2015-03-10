@@ -12,7 +12,7 @@
 
 
   </head>
-  <body background = "images/background.jpg">
+  <body onblur="self.focus();">
 	<header>
 		<span id="header-text">Planner</span>
 		
@@ -26,6 +26,25 @@
 
 		<div id ="planning-view">
 
+			<div id="popupAddActivity">
+				<!-- Add activity Form -->
+				<form action="#" id="form" method="post" name="form">
+				<img id="close" src="images/3.png" onclick ="div_hide()">
+				<h2>Add Activity</h2>
+				<hr>
+				<input id="name" name="name" placeholder="Name" type="text">
+				<input id="description" name="description" placeholder="Description" type="text">
+				<select>
+				  <option value="Presentation" selected>Presentation</option>
+				  <option value="Group Work">Group Work</option>
+				  <option value="Discussion">Discussion</option>
+				  <option value="Break">Break</option>
+				</select>
+				<button id ="confirm-activity" class = "button-add">Confirm activity</button>
+				<!--<a href="javascript:%20check_empty()" id="submit">Send</a> -->
+				</form>
+			<!-- Popup Div Ends Here -->
+			</div>
 			
 			<div id="activity-rect"></div>
 			<div id="day-rect"></div>
@@ -33,9 +52,10 @@
 			<div id="right">
 			<button id ="add-day" class = "button-add">add Day</button>
 			<button id ="add-activity" class = "button-add">add Activity</button>
+			
 			</div>
 
-
+			
 
 
 		</div>
