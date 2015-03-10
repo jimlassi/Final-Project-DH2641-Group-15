@@ -25,23 +25,24 @@
 
 
 		<div id ="planning-view">
-
+			<!-- Popup Starts Here -->
 			<div id="popupAddActivity">
 				<!-- Add activity Form -->
-				<form action="#" id="form" method="post" name="form">
+				<div id="form" name="form">
 				<h2>Add Activity</h2>
 				<hr>
-				<input id="name" name="name" placeholder="Name" type="text">
-				<input id="description" name="description" placeholder="Description" type="text">
-				<select>
-				  <option value="Presentation" selected>Presentation</option>
-				  <option value="Group Work">Group Work</option>
-				  <option value="Discussion">Discussion</option>
-				  <option value="Break">Break</option>
+				<input id="name" name="name" placeholder="Name of activity" type="text">
+				<input id="length" min="1" name="length" placeholder="Length of activity" type="number">
+				<input id="description" name="description" placeholder="Description of activity" type="text">
+				<select id="type">
+				  <option value="0" selected>Presentation</option>
+				  <option value="1">Group Work</option>
+				  <option value="2">Discussion</option>
+				  <option value="3">Break</option>
 				</select>
 				<button id ="confirm-activity" class = "button-add">Confirm activity</button>
 				<!--<a href="javascript:%20check_empty()" id="submit">Send</a> -->
-				</form>
+				</div>
 			<!-- Popup Div Ends Here -->
 			</div>
 			

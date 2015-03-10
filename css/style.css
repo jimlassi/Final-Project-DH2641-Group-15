@@ -64,9 +64,9 @@ table {
 select {
 	padding: 10px;
 	width: 300px;
-	margin-left: 5%;
+	margin-top: 30px;
 	border: solid 1px #8b8b8b;
-
+	font-size:16px;
 }
 
 .right {
@@ -291,9 +291,8 @@ div#popupAddActivity {
 	left:50%;
 	top:17%;
 	margin-left:-202px;
-	font-family:'Raleway',sans-serif
 }
-form {
+#form {
 	max-width:300px;
 	min-width:250px;
 	padding:10px 50px;
@@ -309,7 +308,14 @@ input[type=text] {
 	border:1px solid #ccc;
 	padding-left:40px;
 	font-size:16px;
-	font-family:raleway
+}
+input[type=number] {
+	width:82%;
+	padding:10px;
+	margin-top:30px;
+	border:1px solid #ccc;
+	padding-left:40px;
+	font-size:16px;
 }
 #name {
 	background-repeat:no-repeat;
