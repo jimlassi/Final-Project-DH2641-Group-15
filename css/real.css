@@ -89,7 +89,7 @@ th,td {
 }
 
 .button {
-	background: rgb(255, 211, 105);
+	background: rgba(0,255,0,0.4);
 	border: solid 1px #b39141;
 	padding: 10px 20px;
 	margin: 10px 0;
@@ -100,7 +100,7 @@ th,td {
 	font-size: 13px;
 }
 .button:hover {
-    background: #dbb761;
+    background: #dbb461;
 }
 .button:active {
     color: white;
@@ -110,7 +110,7 @@ th,td {
 /* === PAGE HEADER === */
 header {
     width: 100%;
-    background: rgba(255, 211, 105, 0.7);
+    background: rgba(0,255,0,0.4);
     position: absolute;
     top: 0;
     padding: 20px;
