@@ -1,0 +1,190 @@
+@import url(http://fonts.googleapis.com/css?family=Gabriela);
+
+/* === SETUP === */
+body, * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-repeat: no-repeat;
+    font-family: 'helvetica', serif;
+    /*background: url("../images/img.jpg");*/
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+h1 {
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 20px 0;
+}
+
+hr {
+    height: 1px;
+    border: none;
+    background: black;
+    margin 20px 0;
+    display: block;
+}
+
+table {
+    width: 100%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* === BUTTONS === */
+.add-activity-button {
+    border: solid;
+    padding: 10px 20xp;
+    background: green;
+    position: block;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%
+    font-size: 13px;
+}
+
+.add-activity-button:hover {
+    background: #dbb761;
+}
+
+.add-activity-button:active {
+    color: white;
+    background: rgb(255,211,105);
+}
+
+.button-add {
+    border: solid 1px #b39141;
+    padding: 10px 20px;
+    margin: 90px 20px;
+    background: grey;
+    position: block;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: arial;
+    font-size: 13px;
+}
+
+.button-add:hover {
+    background: #dbb761;
+}
+
+.button-add:active {
+    color: white;
+    background: rgb(255,211,105);
+}
+
+/* === PAGE HEADER === */
+header {
+    width: 100%;
+    background: rgba(255, 211, 105, 0.7);
+    position: absolute;
+    top: 0;
+    padding: 20px;
+    border-bottom: 2px solid black;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#header-text {
+    margin-left 3%;
+    font-size: 1.5em;
+}
+
+/* === START PAGE === */
+#start-view {
+    width: 30%;
+    min-height: 250px;
+    background: rgba(255,255,255, 0.8);
+    padding: 20px;
+    margin-top: 30%;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    overflow: hidden;
+}
+
+/* === MAIN PAGE === */
+#planning-view {
+    display: none;
+    width: 100%;
+    position: relative;
+    height: 750px;
+    padding: 20px;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* === ACTIVITY STUFF === */
+#activity-rect {
+    position: relative;
+    width: 20%;
+    height: 70%;
+    display: inline;
+    background: grey;
+    padding: 20px;
+    opacity: 20%;
+    margin-top: 70px;
+    float: left;
+    border: 2px solid black;
+    margin-left 20px;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+#activity-table-head {
+    background: #c4c4c4;
+    border-top: 2px;
+    border-bottom: 2px;
+    height: 20px;
+
+/* === POPUP === */
+div#popupAddActivity {
+    display: none;
+    z-index: 999;
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    margin-left: -202px;
+    font-family: 'Raleway', sans-serif;
+}
+
+form {
+    max-width: 300px;
+    min-width: 250px;
+    padding: 10px 50px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+input[type=text] {
+    width: 82%;
+    padding: 10px;
+    margin-top 30px;
+    border: 1px solid #ccc;
+    padding-left: 40px;
+    font-size: 16px;
+}
+
+#name {
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+}
+
+#description {
+    background-repeat: no-repeat;
+    background-position: 5px 7px;
+}
