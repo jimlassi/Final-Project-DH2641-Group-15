@@ -81,7 +81,30 @@ select {
 	padding: 20px;
 }
 
+
+.add {
+
+
+
+}
+
 /* === Button === */
+.button-add{
+
+	border: solid 1px #b39141;
+	padding: 10px 20px;
+	margin: 90px 20px;
+	background: grey;
+	position: block;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 13px;
+}
+
+
+
+
 
 .button {
 	background: rgb(255, 211, 105);
@@ -121,6 +144,8 @@ select {
 	text-align: center;
 	padding: 0;
 }
+
+
 
 #search-button {
 	margin-top: 0;
@@ -215,6 +240,16 @@ header {
 	width: 80%;
 	margin-top: 124px;
 	border-left: solid 2px black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+
+#right{
+	float: left;
+	min-height: 900px;
+	width: 50%;
+	
+	
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
@@ -316,17 +351,37 @@ header {
 
 #day-rect {
 	position: relative;
-	width: 50%;
+	width: 20%;
+	height: 60%;
 	display: inline;
-	background: green;
+	background: gray;
+	opacity: 20%;
 	padding: 20px;
 	margin-top: 70px;
+	margin-left: 20px;
 	float: left;
 	border: 2px solid black;
-	background: rgba(255, 211, 105, 0.7);
+	
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
+
+
+#activity-rect {
+	position: relative;
+	width: 20%;
+	height: 70%;
+	display: inline;
+	background: grey;
+	padding: 20px;
+	opacity: 20%;
+	margin-top: 70px;
+	float: left;
+	border: 2px solid black;
+	margin-left: 20px;
+
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 .dish-img {
 	width: 100%;
 	position: relative;
