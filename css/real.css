@@ -29,11 +29,11 @@ p {
 }
 
 hr {
-    height: 1px;
-    border: none;
-    background: black;
-    margin 20px 0;
-    display: block;
+	height: 1px;
+	border: none;
+	background: black;
+	margin: 20px 0;
+	display: block;
 }
 
 table {
@@ -48,7 +48,7 @@ table {
     float: right;
 }
 
-/* === BUTTONS === */
+/* === BUTTONS (WIP) === */
 .add-activity-button {
     border: solid;
     padding: 10px 20xp;
@@ -59,11 +59,9 @@ table {
     width: 100%
     font-size: 13px;
 }
-
 .add-activity-button:hover {
     background: #dbb761;
 }
-
 .add-activity-button:active {
     color: white;
     background: rgb(255,211,105);
@@ -80,12 +78,29 @@ table {
     font-family: arial;
     font-size: 13px;
 }
-
 .button-add:hover {
     background: #dbb761;
 }
-
 .button-add:active {
+    color: white;
+    background: rgb(255,211,105);
+}
+
+.button {
+	background: rgb(255, 211, 105);
+	border: solid 1px #b39141;
+	padding: 10px 20px;
+	margin: 10px 0;
+	display: inline-block;
+	font-weight: bold;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 13px;
+}
+.button:hover {
+    background: #dbb761;
+}
+.button:active {
     color: white;
     background: rgb(255,211,105);
 }
@@ -130,61 +145,84 @@ header {
 
 /* === ACTIVITY STUFF === */
 #activity-rect {
-    position: relative;
-    width: 20%;
-    height: 70%;
-    display: inline;
-    background: grey;
-    padding: 20px;
-    opacity: 20%;
-    margin-top: 70px;
-    float: left;
-    border: 2px solid black;
-    margin-left 20px;
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	position: relative;
+	width: 20%;
+	height: 70%;
+	display: inline;
+	background: grey;
+	padding: 20px;
+	opacity: 20%;
+	margin-top: 70px;
+	float: left;
+	border: 2px solid black;
+	margin-left: 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
 #activity-table-head {
-    background: #c4c4c4;
-    border-top: 2px;
-    border-bottom: 2px;
-    height: 20px;
+	background: #c4c4c4;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	height: 40px;
+	padding: 10px 20px;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+/* === DAY STUFF === */
+#day-rect {
+	position: relative;
+	width: 20%;
+	height: 60%;
+	display: inline;
+	background: gray;
+	opacity: 20%;
+	padding: 20px;
+	margin-top: 70px;
+	margin-left: 20px;
+	float: left;
+	border: 2px solid black;
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
 
 /* === POPUP === */
 div#popupAddActivity {
-    display: none;
-    z-index: 999;
-    position: absolute;
-    left: 50%;
-    top: 17%;
-    margin-left: -202px;
-    font-family: 'Raleway', sans-serif;
+	display: none;
+	z-index: 999;
+	position:absolute;
+	left:50%;
+	top:17%;
+	margin-left:-202px;
 }
-
-form {
-    max-width: 300px;
-    min-width: 250px;
-    padding: 10px 50px;
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: #fff;
+#form {
+	max-width:300px;
+	min-width:250px;
+	padding:10px 50px;
+	border:2px solid gray;
+	border-radius:10px;
+	font-family:raleway;
+	background-color:#fff
 }
-
 input[type=text] {
-    width: 82%;
-    padding: 10px;
-    margin-top 30px;
-    border: 1px solid #ccc;
-    padding-left: 40px;
-    font-size: 16px;
+	width:82%;
+	padding:10px;
+	margin-top:30px;
+	border:1px solid #ccc;
+	padding-left:40px;
+	font-size:16px;
 }
-
+input[type=number] {
+	width:82%;
+	padding:10px;
+	margin-top:30px;
+	border:1px solid #ccc;
+	padding-left:40px;
+	font-size:16px;
+}
 #name {
-    background-repeat: no-repeat;
-    background-position: 5px 7px;
+	background-repeat:no-repeat;
+	background-position:5px 7px
 }
-
 #description {
-    background-repeat: no-repeat;
-    background-position: 5px 7px;
+	background-repeat:no-repeat;
+	background-position:5px 7px
 }
