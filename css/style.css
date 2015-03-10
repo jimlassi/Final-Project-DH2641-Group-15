@@ -312,12 +312,10 @@ input[type=text] {
 	font-family:raleway
 }
 #name {
-	background-image:url(../images/name.jpg);
 	background-repeat:no-repeat;
 	background-position:5px 7px
 }
 #description {
-	background-image:url(../images/email.png);
 	background-repeat:no-repeat;
 	background-position:5px 7px
 }
