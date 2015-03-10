@@ -3,6 +3,8 @@ $(function() {
 	var model = new Model();
 
 	startView = new StartView($("#start-view"), model);
-	startViewController = new startViewController(startView, model);
-
+	startViewController = new StartViewController(startView, model);
+	planningView = new PlanningView($("#planning-view"), model);
+	planningViewController = new PlanningViewController(planningView, model);
+	
 	});

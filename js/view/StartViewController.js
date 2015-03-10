@@ -1,4 +1,4 @@
-var startViewController = function(view, model ) {
+var StartViewController = function(view, model ) {
 	
 			
 	$("#start-button").click(function(){
