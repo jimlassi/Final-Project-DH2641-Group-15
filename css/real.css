@@ -191,7 +191,7 @@ header {
 
 
 /* === DAY STUFF === */
-#day-rect {
+ul#day-rect {
 	position: relative;
 	width: 20%;
 	height: 70%;

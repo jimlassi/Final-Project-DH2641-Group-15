@@ -18,9 +18,16 @@ var PlanningView = function (container, model) {
 		table.html("");
 		
 		//this.table.html("<table>");
+<<<<<<< Updated upstream
 		var x = document.createElement("table");
 		x.setAttribute("id", "content-table" ); 
 		document.getElementById("activity-table-content").appendChild(x);
+=======
+		var x = document.createElement("ul");
+		 x.setAttribute("id", "content-table" );
+		 
+		 document.getElementById("activity-table-content").appendChild(x);
+>>>>>>> Stashed changes
 		 
 		for(i= 0; i< model.parkedActivities.length; i++){
 
@@ -29,6 +36,7 @@ var PlanningView = function (container, model) {
 			 time = model.parkedActivities[i].getLength();
 			 description = model.parkedActivities[i].getDescription();
 
+<<<<<<< Updated upstream
 			 
 			 id = "draggable"+i.toString();
 			 
@@ -49,6 +57,28 @@ var PlanningView = function (container, model) {
 			 document.getElementById(id).appendChild(actCol);
 			 document.getElementById(id).appendChild(timeCol);
 			 
+=======
+		 
+		id = "draggable"+i.toString();
+		 
+		 var tableRow = document.createElement("li");
+		 tableRow.setAttribute("id", id);
+		 tableRow.setAttribute("class", "row");
+		 document.getElementById("content-table").appendChild(tableRow);
+		 
+		var actCol = document.createElement("TD");
+		var actString = document.createTextNode(name);
+		
+		var timeCol = document.createElement("TD");
+		var timeString = document.createTextNode(time+" min");
+		
+		
+		actCol.appendChild(actString);
+		timeCol.appendChild(timeString);
+		document.getElementById(id).appendChild(actCol);
+		document.getElementById(id).appendChild(timeCol);
+		 
+>>>>>>> Stashed changes
 		 
 		
 		 
@@ -65,6 +95,7 @@ var PlanningView = function (container, model) {
 		$(function() {
 			
 			
+<<<<<<< Updated upstream
 			var $parked = $( "#activity-table-content" ),
 			$day = $( "#day-rect" );
 		  
@@ -130,6 +161,62 @@ var PlanningView = function (container, model) {
 			}
 			  
 		});
+=======
+		var $parked = $( "#content-table" ),
+		$day = $( "#day-rect" );
+
+
+	 $("ul").sortable({
+	 	connectWith: "ul"
+
+
+	 });
+	 $day.sortable();
+	/* $("ul", $parked).draggable({
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      containment: "document",
+      cursor: "move"
+    });*/
+ 	
+    // let the trash be droppable, accepting the gallery items
+   /* $day.droppable({
+    	revert:"invalid"
+
+
+
+    }
+
+
+    	);*/
+     /*$("ul", $day).draggable({
+      revert: "invalid", // when not dropped, the item will revert back to its initial position
+      containment: "document",
+      cursor: "move"
+    });*/
+ 	/* $("ul", $day).sortable();*/
+    // let the gallery be droppable as well, accepting items from the tras;
+
+  //  $parked.droppable();
+	  
+	  
+
+ 
+    // image recycle function
+
+	  
+	  
+	  /*
+    $( ".row" ).draggable();
+    $( "#day-rect" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "div" )
+            .html( "Dropped!" );
+      }
+    });*/
+  });
+>>>>>>> Stashed changes
 
 
 	}
