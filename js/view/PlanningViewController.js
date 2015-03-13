@@ -43,23 +43,16 @@ var PlanningViewController = function(view, model ) {
 	
 	
 	
-	
+	//Drag and drop
 	$(function() {
-    $( ".row" ).draggable();
-    $( "#day-rect" ).droppable({
-      drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-          .find( "div" )
-            .html( "Dropped!" );
-      }
-    });
-  });
+		$( ".row" ).draggable();
+		$( "#day-rect" ).droppable();
+	});
 	
 	
 	
 	
-	}
+}
 
 
 
