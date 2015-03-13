@@ -18,8 +18,8 @@ var PlanningView = function (container, model) {
 		this.table = container.find(".table-parked");
 		table.html("");
 		
-		var x = document.createElement("table");
-		x.setAttribute("id", "content-table" ); 
+		var x = document.createElement("ol");
+		x.setAttribute("class", "content-table" ); 
 		document.getElementById("activity-table-content").appendChild(x);
 		 
 		for(i= 0; i< model.parkedActivities.length; i++){
@@ -27,16 +27,12 @@ var PlanningView = function (container, model) {
 			time = model.parkedActivities[i].getLength();
 			description = model.parkedActivities[i].getDescription(); 
 			
-			id = "draggable"+i.toString();
+			id = i.toString();
 		 
-			var tableRow = document.createElement("div");
+			var tableRow = document.createElement("li");
 			tableRow.setAttribute("id", id);
 			tableRow.setAttribute("class", "row");
-			document.getElementById("content-table").appendChild(tableRow);
-
-			var x = document.createElement("table");
-			x.setAttribute("id", "content-table" ); 
-			document.getElementById("activity-table-content").appendChild(x);
+			x.appendChild(tableRow);
 			
 			var actCol = document.createElement("td");
 			var actString = document.createTextNode(name);
@@ -62,16 +58,17 @@ var PlanningView = function (container, model) {
 			
 			// Setup Day container and header
 			tmpDayContainer = document.createElement("div");
-			tmpDayContainer.setAttribute("id", "day"+i.toString());
-			tmpDayContainer.setAttribute("class", "day-rect");
+			tmpDayContainer.setAttribute("id", "day-rect");// i);
+			//tmpDayContainer.setAttribute("class", "day-rect");
 			
 
 			tmpDayHeader = document.createElement("div");
 			tmpDayHeader.setAttribute("id", "activity-table-head");
 			//tmpDayHeader.setAttribute("id", "day-header"); SÄTT IN DAY CSS FÖR HEADERN HÄR	
 			
-			tmpDayTable = document.createElement("table");
-			tmpDayTable.setAttribute("id", "content-table");
+			tmpDayTable = document.createElement("ol");
+			tmpDayTable.setAttribute("class", "day-content-table");
+			tmpDayTable.setAttribute("id", i); // set the id of the day table to i
 			
 			// add table to the day	
 			tmpDayContainer.appendChild(tmpDayHeader);
@@ -80,20 +77,21 @@ var PlanningView = function (container, model) {
 			
 			// add the activities to each day
 			for (k=0; k<model.days[i]._activities.length; k++) {
+				console.log(model.days[i]);
 				
-				name = model.days[i].actvities[k].getName();
-				time = model.days[i].actvities[k].getLength();
-				description = model.days[i].actvities[k].getDescription(); 
+				name = model.days[i]._activities[k].getName();
+				time = model.days[i]._activities[k].getLength();
+				description = model.days[i]._activities[k].getDescription(); 
 			
-				id = "draggable"+i.toString();
+				id = k.toString();
 			
-				var tableRow = document.createElement("div");
+				var tableRow = document.createElement("li");
 				tableRow.setAttribute("id", id);
 				tableRow.setAttribute("class", "row");
 			
 				var timeCol = document.createElement("td");
 				var timeString = document.createTextNode(time+" min");
-				timeCol.appendChile(timeString);
+				timeCol.appendChild(timeString);
 			
 				var actCol = document.createElement("td");
 				var actString = document.createTextNode(name);
@@ -108,31 +106,60 @@ var PlanningView = function (container, model) {
 		}
 	}
 
+	
+		
+	
 
 	this.update = function(arg){
-		getActivities();
+		
 		displayDays();
+		getActivities();
+		
 		
 		$(function() {
-			var $parked = $( "#activity-table-content" ),
-			$day = $( "#content-table" );
-			
-			$( "div", $parked ).draggable({
-				cancel: "a.ui-icon", // clicking an icon won't initiate dragging
-				revert: "invalid", // when not dropped, the item will revert back to its initial position
-				containment: "document",
-				cursor: "move",
-				helper: "original"
-				});
- 
-			// let the activities be droppable
-			$day.droppable({
-				//accept: "#activity-table-content > div",
-				//activeClass: "ui-state-highlight",
-				drop: function( event, ui ) {
-					//deleteImage( ui.draggable );
+			$("ol").sortable({
+				connectWith: "ol",
+				
+				start: function(event, ui) {
+					// vars from the source to be passed to model
+					tmpSourceIndex = ui.item.index();
+					tmpSourceId = event.target.id;
+				},
+				
+					// INTE KLAR!!
+					// when moving within day/parked
+				stop: function(event,ui) {
+					// target vars when moving intra-day
+					console.log("KÖRS DEN HÄR NÄR MAN FLYTTAR TILL ANNAN DAG?");
+					tmpTargetId = event.target.id;
+					tmpTargetIndex = ui.item.index();
+					
+					if (tmpSourceId ==="") {
+						tmpSourceId = null;
 					}
-				});
+					
+					// updating the model when moving intra-day
+					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
+					
+				},
+					
+				receive: function(event, ui) {
+					//console.log(event);
+					//console.log(ui);
+					console.log("VART E VI PÅ VÄG")
+					
+					// vars to be passed to the model
+					tmpTargetId = event.target.id;
+					tmpTargetIndex = ui.item.index();
+					
+					if (tmpSourceId ==="") {
+						tmpSourceId = null;
+					}
+					
+					// updating the model when moving activity to another day
+					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
+				}
 			});
-		}
+		});
+	}
 }
