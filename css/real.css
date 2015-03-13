@@ -178,6 +178,7 @@ header {
     float: left;
 }
 
+/* FIX ACTIVITY TABLE LAYOUT */
 .row {
 
 
@@ -187,14 +188,37 @@ header {
     border-collapse: collapse;
 
 }
+/*
+#activity-row {
+	border: 1px solid #eee;
+	width: 142px;
+	min-height: 20px;
+	list-style-type: none;
+	margin: 0;
+	padding: 5px 0 0 0;
+	float: left;
+	margin-right: 10px;
+}*/
 
+/*
+ * REMOVE ??
+ * 
+
+.table-parked {
+	height: 100%;
+}
+
+#activity-table {
+	height: 100%;
+}*/
 
 
 /* === DAY STUFF === */
-#day-rect {
+.day-rect {
 	position: relative;
 	width: 20%;
 	height: 60%;
+	min-height: 350px;
 	display: inline;
 	background: gray;
 	opacity: 20%;

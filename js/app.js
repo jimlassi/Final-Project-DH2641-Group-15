@@ -7,4 +7,7 @@ $(function() {
 	planningView = new PlanningView($("#planning-view"), model);
 	planningViewController = new PlanningViewController(planningView, model);
 	
+	//planningViewRewritten = new PlanningViewRewritten($("#planning-view"), model);
+	//planningViewControllerRewritten = new PlanningViewControllerRewritten(planningViewRewritten, model);
+	
 	});

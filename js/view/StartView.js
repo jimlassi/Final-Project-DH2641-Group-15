@@ -10,9 +10,6 @@ var StartView = function (container, model) {
 	//dosomething();
 	//sadaf
 	this.StartView.html("testing");
-	
-
-
 
 
 	this.update = function(arg){

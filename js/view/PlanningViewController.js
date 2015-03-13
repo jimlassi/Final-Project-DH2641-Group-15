@@ -7,6 +7,11 @@ var PlanningViewController = function(view, model ) {
 
 	});
 
+	$("#add-day").click(function(){
+		model.addDay();
+		console.log(model.days.length);
+	});
+
 	//Confirm activity and hide popup
 	$("#confirm-activity").click(function(){
 		

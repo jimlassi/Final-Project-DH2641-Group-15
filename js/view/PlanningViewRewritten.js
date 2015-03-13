@@ -56,7 +56,7 @@ var PlanningViewRewritten = function (container, model) {
 		daySurround.html("");
 		
 		for (i=0; i < days ; i++) {
-			var tmpDay = document.createElement("div");
+			var tmpDay = document.createElement("ul");
 			//tempId = "day-container";
 			tmpDay.setAttribute("id", "day-container"); 
 			tmpDay.className = "day-rect";
