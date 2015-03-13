@@ -214,11 +214,18 @@ header {
 
 
 /* === DAY STUFF === */
+<<<<<<< HEAD
 .day-rect {
 	position: relative;
 	width: 20%;
 	height: 60%;
 	min-height: 350px;
+=======
+ul#day-rect {
+	position: relative;
+	width: 20%;
+	height: 70%;
+>>>>>>> f2be4830b76fcd95b3cd5d915d9d61e9cc666f79
 	display: inline;
 	background: gray;
 	opacity: 20%;
