@@ -18,6 +18,7 @@ var PlanningView = function (container, model) {
 		this.table = container.find(".table-parked");
 		table.html("");
 		
+<<<<<<< Updated upstream
 		var x = document.createElement("ol");
 		x.setAttribute("class", "content-table" ); 
 		document.getElementById("activity-table-content").appendChild(x);
@@ -51,6 +52,48 @@ var PlanningView = function (container, model) {
 	function displayDays() {
 		this.dayContainer = container.find("#days");
 		dayContainer.html("");
+=======
+		//this.table.html("<table>");
+
+		var x = document.createElement("ul");
+		 x.setAttribute("id", "content-table" );
+		 x.setAttribute("class", "droppings");
+		 
+		 document.getElementById("activity-table-content").appendChild(x);
+
+		 
+		for(i= 0; i< model.parkedActivities.length; i++){
+
+
+			 name = model.parkedActivities[i].getName();
+			 time = model.parkedActivities[i].getLength();
+			 description = model.parkedActivities[i].getDescription();
+
+ 
+		 
+		id = "draggable"+i.toString();
+		 
+		 var tableRow = document.createElement("li");
+		 tableRow.setAttribute("id", id);
+		 tableRow.setAttribute("class", "row");
+		// tableRow.setAttribute("attribute", time);
+		 document.getElementById("content-table").appendChild(tableRow);
+		 
+		var actCol = document.createElement("TD");
+		var actString = document.createTextNode(name);
+		
+		var timeCol = document.createElement("TD");
+		var timeString = document.createTextNode(time+" min");
+		
+		
+		actCol.appendChild(actString);
+		timeCol.appendChild(timeString);
+		document.getElementById(id).appendChild(actCol);
+		document.getElementById(id).appendChild(timeCol);
+		 
+
+		 
+>>>>>>> Stashed changes
 		
 		console.log(model.days.length);
 		// add the days to the main container
@@ -112,6 +155,7 @@ var PlanningView = function (container, model) {
 
 	this.update = function(arg){
 		
+<<<<<<< Updated upstream
 		displayDays();
 		getActivities();
 		
@@ -161,5 +205,32 @@ var PlanningView = function (container, model) {
 				}
 			});
 		});
+=======
+	
+	getTable();
+		
+			
+			
+
+	var $parked = $( "#content-table" ),
+		$day = $( "#day-rect" );
+
+
+		$(function() {
+
+	 $("#content-table", "#day-rect").sortable({
+	 	connectWith: ".droppings"
+	 });
+	});
+	/* $day.droppable({
+	 	drop:
+	 })
+	 $day.sortable();
+*/
+ 
+
+
+
+>>>>>>> Stashed changes
 	}
 }
