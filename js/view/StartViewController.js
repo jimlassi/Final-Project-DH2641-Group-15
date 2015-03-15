@@ -8,8 +8,11 @@ var StartViewController = function(view, model) {
 		
 		
 		model.addDay();
+	
+	  
+    
 		//create parked activities
-		model.addActivity(new Activity("Introduction",10,0,"Introduction for this day"));
+		model.addActivity(new Activity("Introduction",10,0,"Introduction for this day"),0);
 		model.addActivity(new Activity("Breaktime biznezz",20,0,"Boboddy"));
 
 
@@ -17,7 +20,6 @@ var StartViewController = function(view, model) {
 		var length = model.days.length;
 
 	});
-
 
 
 

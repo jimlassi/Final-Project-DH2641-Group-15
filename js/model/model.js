@@ -199,6 +199,8 @@ function Model(){
 			this.addParkedActivity(activity,newposition);
 		}else if(oldday == null) {
 			var activity = this.removeParkedActivity(oldposition);
+			console.log(newday+" = Newday");
+			console.log(this.days);
 			this.days[newday]._addActivity(activity,newposition);
 		}else if(newday == null) {
 			var activity = this.days[oldday]._removeActivity(oldposition);
