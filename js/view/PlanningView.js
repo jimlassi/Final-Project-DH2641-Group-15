@@ -19,7 +19,8 @@ var PlanningView = function (container, model) {
 		table.html("");
 		
 		var x = document.createElement("ol");
-		x.setAttribute("class", "content-table" ); 
+		x.setAttribute("class", "con" ); 
+		x.setAttribute("id", "parked" ); 
 		document.getElementById("activity-table-content").appendChild(x);
 		 
 		for(i= 0; i< model.parkedActivities.length; i++){
@@ -45,13 +46,15 @@ var PlanningView = function (container, model) {
 			document.getElementById(id).appendChild(actCol);
 			document.getElementById(id).appendChild(timeCol)
 		}
+		
 	}
 			
 
 	function displayDays() {
 		this.dayContainer = container.find("#days");
+		//document.getElementById("days").removeChild(i);
+		//document.getElementById("day-rect").remove();
 		dayContainer.html("");
-
 		
 		console.log(model.days.length);
 		// add the days to the main container
@@ -62,20 +65,26 @@ var PlanningView = function (container, model) {
 			tmpDayContainer.setAttribute("id", "day-rect");// i);
 			//tmpDayContainer.setAttribute("class", "day-rect");
 			
-
+			var dayNr = i+1;
 			tmpDayHeader = document.createElement("div");
 			tmpDayHeader.setAttribute("id", "activity-table-head");
+			var dayText = document.createTextNode("Day "+ dayNr); 
+			tmpDayHeader.appendChild(dayText);
 			//tmpDayHeader.setAttribute("id", "day-header"); SÄTT IN DAY CSS FÖR HEADERN HÄR	
 			
 			tmpDayTable = document.createElement("ol");
-			tmpDayTable.setAttribute("class", "day-content-table");
+			tmpDayTable.setAttribute("class", "con");
 			tmpDayTable.setAttribute("id", i); // set the id of the day table to i
-			
-			// add table to the day	
+
 			tmpDayContainer.appendChild(tmpDayHeader);
 			tmpDayContainer.appendChild(tmpDayTable);
 			document.getElementById("days").appendChild(tmpDayContainer);
-			
+			$("#0").sortable({
+			//$(".content-table", ".day-content-table").sortable({
+				connectWith: ".con",
+				//placeholder: "ui-state-highlight",
+			// add table to the day	
+		}).disableSelection();
 			// add the activities to each day
 			for (k=0; k<model.days[i]._activities.length; k++) {
 				console.log(model.days[i]);
@@ -103,47 +112,71 @@ var PlanningView = function (container, model) {
 				
 				// add row to table
 				tmpDayTable.appendChild(tableRow);
+
 			}
-		}
+
+		/*	var idz = "#"+i.toString();
+		$("#0").sortable({
+    	connectWith: ".con"
+		}).disableSelection();
+*/
+		}	
+
 	}
 
 	
 		
+
+
 	
 
 	this.update = function(arg){
 		
-
-		displayDays();
 		getActivities();
+		displayDays();
 		
 		
-		$(function() {
+
+		
+
+	
 			$("ol").sortable({
-				connectWith: "ol",
+			//$(".content-table", ".day-content-table").sortable({
+				connectWith: ".con",
+				//placeholder: "ui-state-highlight",
+			
 				
 				start: function(event, ui) {
 					// vars from the source to be passed to model
 					tmpSourceIndex = ui.item.index();
 					tmpSourceId = event.target.id;
+					console.log(tmpSourceIndex);
+					console.log(tmpSourceId);
+
+					if (tmpSourceId =="parked") {
+						tmpSourceId = null;
+					}
+
 				},
 				
 					// INTE KLAR!!
 					// when moving within day/parked
-				stop: function(event,ui) {
+			/*	stop: function(event,ui) {
 					// target vars when moving intra-day
 					console.log("KÖRS DEN HÄR NÄR MAN FLYTTAR TILL ANNAN DAG?");
-					tmpTargetId = event.target.id;
 					tmpTargetIndex = ui.item.index();
+					tmpTargetId = event.target.id;
+					
+
 					
 					if (tmpSourceId ==="") {
 						tmpSourceId = null;
 					}
 					
 					// updating the model when moving intra-day
-					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
+				//	model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
 					
-				},
+				},*/
 					
 				receive: function(event, ui) {
 					//console.log(event);
@@ -153,21 +186,29 @@ var PlanningView = function (container, model) {
 					// vars to be passed to the model
 					tmpTargetId = event.target.id;
 					tmpTargetIndex = ui.item.index();
+
+					console.log(tmpTargetId + "AAA");
 					
-					if (tmpSourceId ==="") {
+					if (tmpSourceId ==="parked") {
 						tmpSourceId = null;
 					}
 					
+
+					console.log(tmpTargetId + ":tmpTargetId, " + tmpTargetIndex+": tmpTargetIndex, "+tmpSourceId + ": tmpSourceId, "+ tmpSourceIndex+": tmpSourceIndex ");
 					// updating the model when moving activity to another day
 					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
 				}
-			});
-		});
 
 	
 
-		
-			
+		}).disableSelection();
 
-	}
+
+	
+			
+	
+	
+
+}
+
 }

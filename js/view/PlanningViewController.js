@@ -10,6 +10,13 @@ var PlanningViewController = function(view, model ) {
 	$("#add-day").click(function(){
 		model.addDay();
 		console.log(model.days.length);
+
+
+		$("#1").sortable({
+    	connectWith: ".con"
+		}).disableSelection();
+
+
 	});
 
 	//Confirm activity and hide popup
@@ -45,15 +52,6 @@ var PlanningViewController = function(view, model ) {
 				$("#popupAddActivity").hide();
 	
 	});
-	
-	
-	
-	//Drag and drop
-	$(function() {
-		$( ".row" ).draggable();
-		$( "#day-rect" ).droppable();
-	});
-	
 	
 	
 	
