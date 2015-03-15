@@ -18,7 +18,6 @@ var PlanningView = function (container, model) {
 		this.table = container.find(".table-parked");
 		table.html("");
 		
-//<<<<<<< Updated upstream
 		var x = document.createElement("ol");
 		x.setAttribute("class", "content-table" ); 
 		document.getElementById("activity-table-content").appendChild(x);
