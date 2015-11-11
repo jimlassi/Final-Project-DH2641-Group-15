@@ -9,9 +9,41 @@
   
 	<link rel="stylesheet" type="text/css" href="css/real.css">
 
+<script src="js/jquery/jquery-1.11.3.js"></script>
+  <script src="js/jquery/jquery-ui.js"></script>
 
+	<script>
+  $(function() {
+    $( "#sortable1, #sortable2" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+  </script>
+      <style>
+  #sortable1, #sortable2 {
+    border: 1px solid #eee;
+    width: 142px;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: left;
+    margin-right: 10px;
+  }
+  #sortable1 li, #sortable2 li {
+    margin: 0 5px 5px 5px;
+    padding: 5px;
+    font-size: 1.2em;
+    width: 120px;
+  }
+  </style>
 
   </head>
+
+    
+
+
+
   <body>
   	<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
 	<header>
@@ -63,6 +95,8 @@
                 </div>
 
 
+
+
             </div>     
 			<div id="right">
 			    <button id ="add-day" class = "button-add">Add Day</button>
@@ -77,6 +111,21 @@
 
        
 			
+			<ul id="sortable1" class="connectedSortable">
+  <li class="ui-state-default">Item 1</li>
+  <li class="ui-state-default">Item 2</li>
+  <li class="ui-state-default">Item 3</li>
+  <li class="ui-state-default">Item 4</li>
+  <li class="ui-state-default">Item 5</li>
+</ul>
+ 
+<ul id="sortable2" class="connectedSortable">
+  <li class="ui-state-highlight">Item 1</li>
+  <li class="ui-state-highlight">Item 2</li>
+  <li class="ui-state-highlight">Item 3</li>
+  <li class="ui-state-highlight">Item 4</li>
+  <li class="ui-state-highlight">Item 5</li>
+</ul>
 
 
 	
@@ -99,6 +148,7 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 	<!-- The application JavaScript code -->
+	
 	<script src="js/app.js"></script>
 	<script src="js/model/model.js"></script>
 	<script src="js/view/StartView.js"></script>
