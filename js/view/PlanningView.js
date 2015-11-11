@@ -21,8 +21,8 @@ var PlanningView = function (container, model) {
 		this.table = container.find(".table-parked");
 		table.html("");
 		
-		var x = document.createElement("ol");
-		x.setAttribute("class", "con" ); 
+		var x = document.createElement("ul");
+		x.setAttribute("class", "connectedSortable" ); 
 		x.setAttribute("id", "parked" ); 
 		document.getElementById("activity-table-content").appendChild(x);
 		 
@@ -82,9 +82,9 @@ var PlanningView = function (container, model) {
 			tmpDayHeader.appendChild(dayText);
 			//tmpDayHeader.setAttribute("id", "day-header"); SÄTT IN DAY CSS FÖR HEADERN HÄR	
 			
-			tmpDayTable = document.createElement("ol");
-			tmpDayTable.setAttribute("class", "day-act");
-			tmpDayTable.setAttribute("id", i); // set the id of the day table to i
+			tmpDayTable = document.createElement("ul");
+			tmpDayTable.setAttribute("class", "connectedSortable");
+			tmpDayTable.setAttribute("id", "day"+i); // set the id of the day table to i
 
 			tmpDayContainer.appendChild(tmpDayHeader);
 			tmpDayContainer.appendChild(tmpDayTable);
@@ -105,7 +105,7 @@ var PlanningView = function (container, model) {
 
 				var tableRow = document.createElement("li");
 				tableRow.setAttribute("id", id);
-				tableRow.setAttribute("class", "row");
+				tableRow.setAttribute("class", "ui-state-highlight");
 			
 				var timeCol = document.createElement("td");
 				var timeString = document.createTextNode(time+" min");
