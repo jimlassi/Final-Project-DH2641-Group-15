@@ -12,6 +12,9 @@ var PlanningView = function (container, model) {
 	var description; 
 	var type;
 	
+
+
+	
 	function getActivities(){
 	//Add activity to Activity table
 		
@@ -46,14 +49,21 @@ var PlanningView = function (container, model) {
 			document.getElementById(id).appendChild(actCol);
 			document.getElementById(id).appendChild(timeCol)
 		}
+/*
+
+					console.log(tmpTargetId + ":tmpTargetId, " + tmpTargetIndex+": tmpTargetIndex, "+tmpSourceId + ": tmpSourceId, "+ tmpSourceIndex+": tmpSourceIndex ");
+					// updating the model when moving activity to another day
+					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
+				}
+				});*/
 		
 	}
 			
 
 	function displayDays() {
 		this.dayContainer = container.find("#days");
-		//document.getElementById("days").removeChild(i);
-		//document.getElementById("day-rect").remove();
+		
+
 		dayContainer.html("");
 		
 		console.log(model.days.length);
@@ -63,7 +73,7 @@ var PlanningView = function (container, model) {
 			// Setup Day container and header
 			tmpDayContainer = document.createElement("div");
 			tmpDayContainer.setAttribute("id", "day-rect");// i);
-			//tmpDayContainer.setAttribute("class", "day-rect");
+			tmpDayContainer.setAttribute("class", "day-rect");
 			
 			var dayNr = i+1;
 			tmpDayHeader = document.createElement("div");
@@ -73,18 +83,16 @@ var PlanningView = function (container, model) {
 			//tmpDayHeader.setAttribute("id", "day-header"); SÄTT IN DAY CSS FÖR HEADERN HÄR	
 			
 			tmpDayTable = document.createElement("ol");
-			tmpDayTable.setAttribute("class", "con");
+			tmpDayTable.setAttribute("class", "day-act");
 			tmpDayTable.setAttribute("id", i); // set the id of the day table to i
 
 			tmpDayContainer.appendChild(tmpDayHeader);
 			tmpDayContainer.appendChild(tmpDayTable);
+			
 			document.getElementById("days").appendChild(tmpDayContainer);
-			$("#0").sortable({
-			//$(".content-table", ".day-content-table").sortable({
-				connectWith: ".con",
-				//placeholder: "ui-state-highlight",
-			// add table to the day	
-		}).disableSelection();
+			
+
+		
 			// add the activities to each day
 			for (k=0; k<model.days[i]._activities.length; k++) {
 				console.log(model.days[i]);
@@ -94,7 +102,7 @@ var PlanningView = function (container, model) {
 				description = model.days[i]._activities[k].getDescription(); 
 			
 				id = k.toString();
-			
+
 				var tableRow = document.createElement("li");
 				tableRow.setAttribute("id", id);
 				tableRow.setAttribute("class", "row");
@@ -110,17 +118,15 @@ var PlanningView = function (container, model) {
 				tableRow.appendChild(timeCol);
 				tableRow.appendChild(actCol);
 				
-				// add row to table
+				//add row to table
 				tmpDayTable.appendChild(tableRow);
+		
 
+				
 			}
 
-		/*	var idz = "#"+i.toString();
-		$("#0").sortable({
-    	connectWith: ".con"
-		}).disableSelection();
-*/
 		}	
+
 
 	}
 
@@ -131,84 +137,107 @@ var PlanningView = function (container, model) {
 	
 
 	this.update = function(arg){
-		
+			displayDays();
 		getActivities();
-		displayDays();
-		
-		
-
-		
-
 	
-			$("ol").sortable({
-			//$(".content-table", ".day-content-table").sortable({
-				connectWith: ".con",
-				//placeholder: "ui-state-highlight",
-			
-				
-				start: function(event, ui) {
-					// vars from the source to be passed to model
-					tmpSourceIndex = ui.item.index();
-					tmpSourceId = event.target.id;
-					console.log(tmpSourceIndex);
-					console.log(tmpSourceId);
+YUI().use('dd-constrain', 'dd-proxy', 'dd-drop', function(Y) {
+    //Listen for all drop:over events
+    Y.DD.DDM.on('drop:over', function(e) {
+        //Get a reference to our drag and drop nodes
+        var drag = e.drag.get('node'),
+            drop = e.drop.get('node');
 
-					if (tmpSourceId =="parked") {
-						tmpSourceId = null;
-					}
+        //Are we dropping on a li node?
+        if (drop.get('tagName').toLowerCase() === 'li') {
+            //Are we not going up?
+            if (!goingUp) {
+                drop = drop.get('nextSibling');
+            }
+            //Add the node to this list
+            e.drop.get('node').get('parentNode').insertBefore(drag, drop);
+            //Resize this nodes shim, so we can drop on it later.
+            e.drop.sizeShim();
+        }
+    });
+    //Listen for all drag:drag events
+    Y.DD.DDM.on('drag:drag', function(e) {
+        //Get the last y point
+        var y = e.target.lastXY[1];
+        //is it greater than the lastY var?
+        if (y < lastY) {
+            //We are going up
+            goingUp = true;
+        } else {
+            //We are going down.
+            goingUp = false;
+        }
+        //Cache for next check
+        lastY = y;
+    });
+    //Listen for all drag:start events
+    Y.DD.DDM.on('drag:start', function(e) {
+        //Get our drag object
+        var drag = e.target;
+        //Set some styles here
+        drag.get('node').setStyle('opacity', '.25');
+        drag.get('dragNode').set('innerHTML', drag.get('node').get('innerHTML'));
+        drag.get('dragNode').setStyles({
+            opacity: '.5',
+            borderColor: drag.get('node').getStyle('borderColor'),
+            backgroundColor: drag.get('node').getStyle('backgroundColor')
+        });
+    });
+    //Listen for a drag:end events
+    Y.DD.DDM.on('drag:end', function(e) {
+        var drag = e.target;
+        //Put our styles back
+        drag.get('node').setStyles({
+            visibility: '',
+            opacity: '1'
+        });
+    });
+    //Listen for all drag:drophit events
+    Y.DD.DDM.on('drag:drophit', function(e) {
+        var drop = e.drop.get('node'),
+            drag = e.drag.get('node');
 
-				},
-				
-					// INTE KLAR!!
-					// when moving within day/parked
-			/*	stop: function(event,ui) {
-					// target vars when moving intra-day
-					console.log("KÖRS DEN HÄR NÄR MAN FLYTTAR TILL ANNAN DAG?");
-					tmpTargetIndex = ui.item.index();
-					tmpTargetId = event.target.id;
-					
+        //if we are not on an li, we must have been dropped on a ul
+        if (drop.get('tagName').toLowerCase() !== 'li') {
+            if (!drop.contains(drag)) {
+                drop.appendChild(drag);
+            }
+        }
+    });
 
-					
-					if (tmpSourceId ==="") {
-						tmpSourceId = null;
-					}
-					
-					// updating the model when moving intra-day
-				//	model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
-					
-				},*/
-					
-				receive: function(event, ui) {
-					//console.log(event);
-					//console.log(ui);
-					console.log("VART E VI PÅ VÄG")
-					
-					// vars to be passed to the model
-					tmpTargetId = event.target.id;
-					tmpTargetIndex = ui.item.index();
+    //Static Vars
+    var goingUp = false, lastY = 0;
 
-					console.log(tmpTargetId + "AAA");
-					
-					if (tmpSourceId ==="parked") {
-						tmpSourceId = null;
-					}
-					
+    //Get the list of li's in the lists and make them draggable
+    var lis = Y.Node.all('.con ol li');
+    lis.each(function(v, k) {
+        var dd = new Y.DD.Drag({
+            node: v,
+            target: {
+                padding: '0 0 0 20'
+            }
+        }).plug(Y.Plugin.DDProxy, {
+            moveOnEnd: false
+        }).plug(Y.Plugin.DDConstrained, {
+            constrain2node: '.con'
+        });
+    });
 
-					console.log(tmpTargetId + ":tmpTargetId, " + tmpTargetIndex+": tmpTargetIndex, "+tmpSourceId + ": tmpSourceId, "+ tmpSourceIndex+": tmpSourceIndex ");
-					// updating the model when moving activity to another day
-					model.moveActivity(tmpSourceId, tmpSourceIndex, tmpTargetId, tmpTargetIndex);
-				}
+    //Create simple targets for the 2 lists.
+    var uls = Y.Node.all('.con ol');
+    uls.each(function(v, k) {
+        var tar = new Y.DD.Drop({
+            node: v
+        });
+    });
 
-	
-
-		}).disableSelection();
+});
 
 
-	
-			
-	
-	
 
 }
-
 }

@@ -12,11 +12,6 @@ var PlanningViewController = function(view, model ) {
 		console.log(model.days.length);
 
 
-		$("#1").sortable({
-    	connectWith: ".con"
-		}).disableSelection();
-
-
 	});
 
 	//Confirm activity and hide popup

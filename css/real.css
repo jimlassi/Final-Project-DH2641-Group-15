@@ -54,6 +54,13 @@ th,td {
 li {
     list-style-type:none;
 }
+ol{
+
+	margin-top:10px;
+    border:1px solid black;
+    display:block;
+   
+}
 /* === BUTTONS (WIP) === */
 .add-activity-button {
     border: solid;
