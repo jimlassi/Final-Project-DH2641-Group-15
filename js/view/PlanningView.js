@@ -1,19 +1,13 @@
 var PlanningView = function (container, model) {
 
 	model.addObserver(this);
-	
 	this.PlanningView = container.find("#planning-view");
 	this.addActivity = container.find("#add-day");
-
-	
 
 	var name = "";
 	var time; 
 	var description; 
 	var type;
-	
-
-
 	
 	function getActivities(){
 	//Add activity to Activity table
@@ -85,7 +79,6 @@ var PlanningView = function (container, model) {
 			tmpDayTable = document.createElement("ul");
 			tmpDayTable.setAttribute("class", "connectedSortable");
 			tmpDayTable.setAttribute("id", "day"+i); // set the id of the day table to i
-
 			tmpDayContainer.appendChild(tmpDayHeader);
 			tmpDayContainer.appendChild(tmpDayTable);
 			
