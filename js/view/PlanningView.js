@@ -36,7 +36,7 @@ var PlanningView = function (container, model) {
 			x.appendChild(tableRow);
 
 			
-			
+			makeDraggable("parked");
 			/*var actCol = document.createElement("td");
 			var actString = document.createTextNode(name);
 			actCol.appendChild(actString);
@@ -74,6 +74,8 @@ var PlanningView = function (container, model) {
 			tmpDayContainer.setAttribute("id", "day-rect");// i);
 			tmpDayContainer.setAttribute("class", "day-rect");
 			
+
+
 			var dayNr = i+1;
 			tmpDayHeader = document.createElement("div");
 			tmpDayHeader.setAttribute("id", "activity-table-head");
@@ -105,31 +107,39 @@ var PlanningView = function (container, model) {
 				tableRow.setAttribute("id", id);
 				tableRow.setAttribute("class", "ui-state-highlight");
 			
-				var timeCol = document.createElement("td");
-				var timeString = document.createTextNode(time+" min");
-				timeCol.appendChild(timeString);
+				//var timeCol = document.createElement("td");
+				//var timeString = document.createTextNode(time+" min");
+				//timeCol.appendChild(timeString);
 			
-				var actCol = document.createElement("td");
-				var actString = document.createTextNode(name);
-				actCol.appendChild(actString);
+				//var actCol = document.createElement("td");
+				//var actString = document.createTextNode(name);
+				//actCol.appendChild(actString);
 				
-				tableRow.appendChild(timeCol);
-				tableRow.appendChild(actCol);
+				//tableRow.appendChild(timeCol);
+				//tableRow.appendChild(actCol);
 				
+
+				tableRow.innerHTML = "Activity: "+name ;
 				//add row to table
 				tmpDayTable.appendChild(tableRow);
-		
+				
+			
 
 				
 			}
 
 		}	
-
+	makeDraggable("day"+(i-1));
 
 	}
 
 	
-		
+		function makeDraggable(string){
+
+			console.log(string);
+		$("#"+string).sortable();
+
+	}	
 
 
 	

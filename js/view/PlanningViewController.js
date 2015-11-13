@@ -47,7 +47,12 @@ var PlanningViewController = function(view, model ) {
 				$("#popupAddActivity").hide();
 	
 	});
-	
+	function makeDraggable(){
+
+
+		$(".connectedSortable").draggable();
+
+	}
 	
 	
 }
