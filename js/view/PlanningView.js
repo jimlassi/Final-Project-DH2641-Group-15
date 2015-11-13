@@ -37,6 +37,7 @@ var PlanningView = function (container, model) {
 
 			
 			makeDraggable("parked");
+			connectSortable();
 			/*var actCol = document.createElement("td");
 			var actString = document.createTextNode(name);
 			actCol.appendChild(actString);
@@ -127,9 +128,12 @@ var PlanningView = function (container, model) {
 
 				
 			}
-
+	
 		}	
-	makeDraggable("day"+(i-1));
+		for (i=0; i<model.days.length; i++) {
+		makeDraggable("day"+i);
+		connectSortable();
+}
 
 	}
 
@@ -137,9 +141,22 @@ var PlanningView = function (container, model) {
 		function makeDraggable(string){
 
 			console.log(string);
-		$("#"+string).sortable();
-
+		$("#"+string).sortable({
+		});
+		
+		connectSortable();
 	}	
+
+	function connectSortable() {
+
+    $( "#parked, #day0, #day1" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  	
+  	}
+
+
+
 
 
 	
