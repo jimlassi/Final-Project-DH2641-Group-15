@@ -37,6 +37,7 @@ var PlanningView = function (container, model) {
 
 			
 			makeDraggable("parked");
+			connectSortable();
 			/*var actCol = document.createElement("td");
 			var actString = document.createTextNode(name);
 			actCol.appendChild(actString);
@@ -71,7 +72,7 @@ var PlanningView = function (container, model) {
 			
 			// Setup Day container and header
 			tmpDayContainer = document.createElement("div");
-			tmpDayContainer.setAttribute("id", "day-rect");// i);
+			tmpDayContainer.setAttribute("id", "day-rect");
 			tmpDayContainer.setAttribute("class", "day-rect");
 			
 
@@ -106,7 +107,6 @@ var PlanningView = function (container, model) {
 				var tableRow = document.createElement("li");
 				tableRow.setAttribute("id", id);
 				tableRow.setAttribute("class", "ui-state-highlight");
-			
 				//var timeCol = document.createElement("td");
 				//var timeString = document.createTextNode(time+" min");
 				//timeCol.appendChild(timeString);
@@ -117,7 +117,6 @@ var PlanningView = function (container, model) {
 				
 				//tableRow.appendChild(timeCol);
 				//tableRow.appendChild(actCol);
-				
 
 				tableRow.innerHTML = "Activity: "+name ;
 				//add row to table
@@ -127,9 +126,12 @@ var PlanningView = function (container, model) {
 
 				
 			}
-
+	
 		}	
-	makeDraggable("day"+(i-1));
+		for (i=0; i<model.days.length; i++) {
+		makeDraggable("day"+i);
+		connectSortable();
+}
 
 	}
 
@@ -137,9 +139,22 @@ var PlanningView = function (container, model) {
 		function makeDraggable(string){
 
 			console.log(string);
-		$("#"+string).sortable();
-
+		$("#"+string).sortable({
+		});
+		
+		connectSortable();
 	}	
+
+	function connectSortable() {
+
+    $( "#parked, #day0, #day1" ).sortable({
+      connectWith: ".connectedSortable"
+    }).disableSelection();
+  	
+  	}
+
+
+
 
 
 	

@@ -72,18 +72,18 @@ ol{
     font-size: 13px;
 }
 .add-activity-button:hover {
-    background: #dbb761;
+    background: rgba(0,255,0,1);
 }
 .add-activity-button:active {
     color: white;
-    background: rgb(255,211,105);
+    background: rgba(0,255,0,0.4);
 }
 
 .button-add {
-    border: solid 1px #b39141;
+    border: solid 1px;
     padding: 10px 20px;
     margin: 90px 20px;
-    background: grey;
+    background: rgba(0,255,0,0.4);
     position: block;
     font-weight: bold;
     cursor: pointer;
@@ -91,16 +91,16 @@ ol{
     font-size: 13px;
 }
 .button-add:hover {
-    background: #dbb761;
+    background: rgba(0,255,0,1);
 }
 .button-add:active {
     color: white;
-    background: rgb(255,211,105);
+    background: rgba(0,255,0,0.4);
 }
 
 .button {
 	background: rgba(0,255,0,0.4);
-	border: solid 1px #b39141;
+	border: solid 1px;
 	padding: 10px 20px;
 	margin: 10px 0;
 	display: inline-block;
@@ -110,11 +110,11 @@ ol{
 	font-size: 13px;
 }
 .button:hover {
-    background: #dbb461;
+    background: rgba(0,255,0,1);
 }
 .button:active {
     color: white;
-    background: rgb(255,211,105);
+    background: rgba(0,255,0,0.4);
 }
 
 /* === PAGE HEADER === */
@@ -200,29 +200,6 @@ header {
     border-collapse: collapse;
 
 }
-/*
-#activity-row {
-	border: 1px solid #eee;
-	width: 142px;
-	min-height: 20px;
-	list-style-type: none;
-	margin: 0;
-	padding: 5px 0 0 0;
-	float: left;
-	margin-right: 10px;
-}*/
-
-/*
- * REMOVE ??
- * 
-
-.table-parked {
-	height: 100%;
-}
-
-#activity-table {
-	height: 100%;
-}*/
 
 
 /* === DAY STUFF === */
