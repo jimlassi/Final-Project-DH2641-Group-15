@@ -29,10 +29,15 @@ var PlanningView = function (container, model) {
 		 
 			var tableRow = document.createElement("li");
 			tableRow.setAttribute("id", id);
-			tableRow.setAttribute("class", "row");
+			tableRow.setAttribute("class", "ui-state-highlight");
+			//var timeString = document.createTextNode(time+" min");
+
+			tableRow.innerHTML = "Activity: "+name ;
 			x.appendChild(tableRow);
+
 			
-			var actCol = document.createElement("td");
+			
+			/*var actCol = document.createElement("td");
 			var actString = document.createTextNode(name);
 			actCol.appendChild(actString);
 			
@@ -41,7 +46,7 @@ var PlanningView = function (container, model) {
 			timeCol.appendChild(timeString);
 			
 			document.getElementById(id).appendChild(actCol);
-			document.getElementById(id).appendChild(timeCol)
+			document.getElementById(id).appendChild(timeCol)*/
 		}
 /*
 
