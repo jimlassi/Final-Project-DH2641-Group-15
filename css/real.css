@@ -9,7 +9,6 @@ body, * {
 body {
     background-repeat: no-repeat;
     font-family: 'helvetica', serif;
-    /*background: url("../images/img.jpg");*/
 }
 
 a {
@@ -155,6 +154,9 @@ header {
     padding: 20px;
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
+/*=== SORTABLE ===*/
+
+
 
 /* === ACTIVITY STUFF === */
 #activity-rect {
@@ -174,8 +176,7 @@ header {
 
 #activity-table-head {
 	background: #c4c4c4;
-	border-top: 2px;
-	border-bottom: 2px solid black;
+	border: solid;
 	height: 40px;
 	padding: 10px 20px;
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
